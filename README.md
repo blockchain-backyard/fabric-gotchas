@@ -5,5 +5,5 @@ Catching errors that Fabric failed to catch.
 #### Compilation Issues
 1. We need gotools to be installed prior to running `make all`. The easiest fix is to run 
  ```
- make dist-clean
+ make dist-clean gotools all
  ```
