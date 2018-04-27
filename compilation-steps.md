@@ -24,6 +24,8 @@ We are assuming that we are in the top fabric directory, i.e., `$GOPATH/src/gith
 	* runs the unit-test within the docker-compose environment as specified in the script within `unit-test/`
 	* does not seem to be too reliable; fails non-deterministically. probably should not concern as even
 
+6. `make release` 
+	* builds platform specific binary files in `release/` for binaries in `build/bin`
 
 #### Building build/bin/peer
 To build `bin/image/peer` we need `build/image/ccenv/` and `build/image/javaenv`. 
