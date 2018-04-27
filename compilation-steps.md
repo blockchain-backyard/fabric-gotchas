@@ -13,15 +13,16 @@ We are assuming that we are in the top fabric directory, i.e., `$GOPATH/src/gith
 	* pulls third-party images `hyperledger/fabric-kafka`, `hyperledger/fabric-couchdb`, etc. from dockerhub 
 	* builds docker images: `hyperledger/fabric-peer`, `hyperledger/fabric-orderer`, `hyperledger/fabric-buildenv`, `hyperledger/fabric-testenv`, `hyperledger/fabric-tools`.
 
-4. exclude `release_notes`  from license checks
+4. If you want to run `make license` (which also gets run as part of `make checks` and `make all`, exclude `release_notes` from license checks
 	in file `release_notes/v1.1.0.txt`
 	```
 	-  | grep -v .key$ | grep -v \\.gen.go$ | grep -v ^Gopkg.lock$ \
 	+  | grep -v .key$ | grep -v \\.gen.go$ | grep -v ^Gopkg.lock$ | grep -v release_notes \
 	```
 
-5. make unit-test
+5. `make unit-test`
 	* runs the unit-test within the docker-compose environment as specified in the script within `unit-test/`
+	* does not seem to be too reliable; fails non-deterministically. probably should not concern as even
 
 
 #### Building build/bin/peer
